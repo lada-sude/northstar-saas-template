@@ -18,8 +18,9 @@ type DashboardUser = {
 export default function DashboardClientFallback() {
   const router = useRouter();
   const supabase = createClient();
-  const [status, setStatus] = useState<{ loading: boolean; user?: DashboardUser }>({
+  const [status, setStatus] = useState<{ loading: boolean; user: DashboardUser | null }>({
     loading: true,
+    user: null,
   });
 
   useEffect(() => {
@@ -66,7 +67,7 @@ export default function DashboardClientFallback() {
     };
   }, [router, supabase]);
 
-  if (status.loading) {
+if (status.loading || !status.user) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-white dark:bg-slate-950">
         <div className="animate-pulse text-slate-600 dark:text-slate-300">Loading dashboard…</div>
