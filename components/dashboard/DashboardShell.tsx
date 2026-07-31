@@ -102,8 +102,8 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
 
         <div className="flex-1">
           <header className="border-b border-slate-200/80 bg-white/80 px-4 py-4 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3">
+              <div className="flex min-w-0 items-center gap-3">
                 <Button
                   variant="secondary"
                   size="sm"
@@ -113,13 +113,13 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
                 >
                   <Menu className="h-4 w-4" />
                 </Button>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm text-slate-500 dark:text-slate-400">Welcome back</p>
-                  <p className="text-lg font-semibold">{fullName}</p>
+                  <p className="max-w-[12rem] break-words text-lg font-semibold leading-tight sm:max-w-none">{fullName}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center justify-end gap-2">
                 <Button
                   variant="ghost"
                   size="sm"

@@ -67,7 +67,7 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.35, delay: index * 0.05 }}
-              className="group rounded-[1.5rem] border border-slate-200 bg-white/90 p-6 shadow-sm ring-1 ring-slate-100 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/80 dark:border-slate-800 dark:bg-slate-900/80 dark:ring-slate-800 dark:hover:shadow-slate-950/40"
+              className="group min-w-0 rounded-[1.5rem] border border-slate-200 bg-white/90 p-6 shadow-sm ring-1 ring-slate-100 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/80 dark:border-slate-800 dark:bg-slate-900/80 dark:ring-slate-800 dark:hover:shadow-slate-950/40"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-50 text-sky-700 ring-1 ring-sky-100 transition group-hover:bg-sky-100 dark:bg-sky-500/10 dark:text-sky-300 dark:ring-sky-500/20 dark:group-hover:bg-sky-500/20">
                 <Icon className="h-5 w-5" />

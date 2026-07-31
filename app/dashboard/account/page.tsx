@@ -38,7 +38,7 @@ export default async function AccountPage() {
         </CardContent>
       </Card>
 
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3">
         <Button>View invoices</Button>
         <Button variant="secondary">Contact support</Button>
       </div>
