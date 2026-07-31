@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import SaaSDashboard from "./SaaSDashboard";
+import { DashboardShell } from "./DashboardShell";
 
 type DashboardUser = {
   id?: string;
@@ -26,6 +27,22 @@ export default function DashboardClientFallback() {
 
     (async () => {
       try {
+        // If the browser was redirected back from the OAuth provider,
+        // let the client SDK process the URL and establish the session.
+        if (
+          typeof window !== "undefined" &&
+          (window.location.href.includes("access_token") || window.location.href.includes("code") || window.location.href.includes("error="))
+        ) {
+          try {
+            // Parse the URL and finalize the session if present.
+            // getSessionFromUrl will be a no-op when there's nothing to parse.
+            // @ts-expect-error - method exists on supabase-js v2 clients created via @supabase/ssr
+            await supabase.auth.getSessionFromUrl();
+            // Clean the URL so query fragments don't persist.
+            window.history.replaceState({}, document.title, window.location.pathname);
+          } catch {}
+        }
+
         const {
           data: { user },
           error,
@@ -57,5 +74,9 @@ export default function DashboardClientFallback() {
     );
   }
 
-  return <SaaSDashboard user={status.user} profile={null} />;
+  return (
+    <DashboardShell user={status.user}>
+      <SaaSDashboard user={status.user} profile={null} />
+    </DashboardShell>
+  );
 }

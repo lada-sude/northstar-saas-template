@@ -1,22 +1,9 @@
-import { redirect } from "next/navigation";
-import { DashboardShell } from "@/components/dashboard/DashboardShell";
-import { createClient } from "@/lib/supabase/server";
-
-export default async function DashboardLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const supabase = await createClient();
-
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
-
-  if (error || !user) {
-    redirect("/");
-  }
-
-  return <DashboardShell user={user}>{children}</DashboardShell>;
+  // Client-side auth handling is performed inside the dashboard pages/components.
+  // Keep the layout lightweight so the client can finalize OAuth redirects.
+  return <>{children}</>;
 }

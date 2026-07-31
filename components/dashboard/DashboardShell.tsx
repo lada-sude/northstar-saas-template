@@ -48,7 +48,9 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
   const [notificationsOpen, setNotificationsOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    // Defer setting mounted to the next tick to avoid synchronous setState
+    const id = window.setTimeout(() => setMounted(true), 0);
+    return () => window.clearTimeout(id);
   }, []);
 
   const currentTheme = mounted ? (theme === "system" ? resolvedTheme : theme) : "light";
