@@ -6,10 +6,12 @@ import {
   Bell,
   LayoutGrid,
   LogOut,
+  Menu,
   Moon,
   Settings,
   SunMedium,
   UserCircle2,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -102,8 +104,14 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
           <header className="border-b border-slate-200/80 bg-white/80 px-4 py-4 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <Button variant="secondary" size="sm" className="lg:hidden" onClick={() => setMobileMenuOpen((open) => !open)}>
-                  Menu
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="lg:hidden"
+                  onClick={() => setMobileMenuOpen((open) => !open)}
+                  aria-label="Open navigation menu"
+                >
+                  <Menu className="h-4 w-4" />
                 </Button>
                 <div>
                   <p className="text-sm text-slate-500 dark:text-slate-400">Welcome back</p>
@@ -115,7 +123,7 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="hidden sm:inline-flex"
+                  className="inline-flex"
                   onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
                 >
                   {mounted && currentTheme === "dark" ? <SunMedium className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -124,7 +132,7 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="hidden sm:inline-flex"
+                    className="inline-flex"
                     onClick={() => setNotificationsOpen((open) => !open)}
                   >
                     <Bell className="h-4 w-4" />
@@ -166,22 +174,45 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
             </div>
 
             {mobileMenuOpen ? (
-              <div className="mt-4 space-y-2 lg:hidden">
-                {navigation.map((item) => {
-                  const Icon = item.icon;
-                  const isActive = pathname === item.href;
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium ${isActive ? "bg-slate-950 text-white dark:bg-sky-500 dark:text-slate-950" : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"}`.trim()}
-                    >
-                      <Icon className="h-4 w-4" />
-                      {item.label}
-                    </Link>
-                  );
-                })}
+              <div className="fixed inset-0 z-40 lg:hidden">
+                <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
+                <div className="absolute inset-x-3 top-3 rounded-[28px] border border-slate-200 bg-white p-4 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-sm font-semibold text-white dark:bg-sky-500 dark:text-slate-950">NS</div>
+                      <div>
+                        <p className="text-sm font-semibold">Quick navigation</p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">Jump to any dashboard area</p>
+                      </div>
+                    </div>
+                    <Button variant="ghost" size="sm" onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+
+                  <nav className="mt-4 space-y-2">
+                    {navigation.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = pathname === item.href;
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={`flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium ${isActive ? "bg-slate-950 text-white dark:bg-sky-500 dark:text-slate-950" : "bg-slate-50 text-slate-600 dark:bg-slate-800 dark:text-slate-300"}`.trim()}
+                        >
+                          <Icon className="h-4 w-4" />
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </nav>
+
+                  <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/70">
+                    <p className="text-sm font-semibold">Mobile-friendly</p>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">The dashboard shell now feels polished on smaller screens too.</p>
+                  </div>
+                </div>
               </div>
             ) : null}
           </header>

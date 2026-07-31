@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function CTA() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-      <div className="rounded-[2rem] border border-slate-200 bg-slate-950 px-8 py-12 text-white shadow-[0_24px_70px_-24px_rgba(2,8,23,0.8)] sm:px-10">
+      <div className="rounded-[2rem] border border-slate-200 bg-slate-950 px-8 py-12 text-white shadow-[0_24px_70px_-24px_rgba(2,8,23,0.8)] dark:border-slate-700 sm:px-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-300">Ready to launch</p>

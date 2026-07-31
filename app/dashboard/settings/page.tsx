@@ -19,7 +19,7 @@ export default async function SettingsPage() {
     <div className="space-y-6">
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">Settings</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight">Tune the workspace for your team</h1>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Tune the workspace for your team</h1>
       </div>
 
       <Card>

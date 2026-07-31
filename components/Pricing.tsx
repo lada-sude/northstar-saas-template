@@ -23,9 +23,9 @@ export default function Pricing() {
   return (
     <section id="pricing" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">Pricing</p>
-        <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">A premium foundation that scales with your product.</h2>
-        <p className="mt-4 text-base leading-8 text-slate-600">Use the starter as-is for your MVP or extend it into a full marketplace product with your own pricing and data model.</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">Pricing</p>
+        <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 dark:text-slate-50 sm:text-4xl">A premium foundation that scales with your product.</h2>
+        <p className="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">Use the starter as-is for your MVP or extend it into a full marketplace product with your own pricing and data model.</p>
       </div>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">

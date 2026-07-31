@@ -25,7 +25,7 @@ export default async function ProfilePage() {
     <div className="space-y-6">
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">Profile</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight">Manage your personal brand</h1>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Manage your personal brand</h1>
       </div>
 
       <Card>

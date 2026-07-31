@@ -20,7 +20,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-200"
         >
           <Sparkles className="h-4 w-4" />
           Premium SaaS starter kit
@@ -30,7 +30,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.05 }}
-          className="max-w-3xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl lg:text-6xl"
+          className="max-w-3xl text-4xl font-black tracking-tight text-slate-950 dark:text-slate-50 sm:text-5xl lg:text-6xl"
         >
           Launch your product with a polished, modern foundation.
         </motion.h1>
@@ -39,7 +39,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg"
+          className="mt-5 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg"
         >
           Northstar gives you a production-ready Next.js app with Supabase auth, reusable UI components, a premium dashboard template, and flexible marketing pages ready to sell.
         </motion.p>
@@ -60,7 +60,7 @@ export default function Hero() {
 
           <a
             href="#how-it-works"
-            className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+            className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
           >
             See the stack
           </a>
@@ -70,10 +70,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-8 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:flex-wrap"
+          className="mt-8 flex flex-col gap-3 text-sm text-slate-600 dark:text-slate-300 sm:flex-row sm:flex-wrap"
         >
           {highlights.map((item) => (
-            <div key={item} className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 shadow-sm ring-1 ring-slate-200">
+            <div key={item} className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 shadow-sm ring-1 ring-slate-200 dark:bg-slate-800/80 dark:ring-slate-700">
               <CheckCircle2 className="h-4 w-4 text-emerald-600" />
               {item}
             </div>
@@ -90,7 +90,7 @@ export default function Hero() {
         <div className="absolute -left-8 top-10 h-28 w-28 rounded-full bg-sky-300/40 blur-3xl" />
         <div className="absolute -right-6 bottom-8 h-32 w-32 rounded-full bg-indigo-300/40 blur-3xl" />
 
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 p-4 shadow-[0_20px_80px_-30px_rgba(15,23,42,0.45)] backdrop-blur-sm sm:p-6">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 p-4 shadow-[0_20px_80px_-30px_rgba(15,23,42,0.45)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80 sm:p-6">
           <div className="rounded-[1.5rem] bg-slate-950 p-5 text-white sm:p-6">
             <div className="flex items-center justify-between">
               <div>

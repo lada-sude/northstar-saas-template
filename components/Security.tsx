@@ -41,23 +41,23 @@ export default function Security() {
   return (
     <section id="security" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-        <div className="rounded-[2rem] border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-6 shadow-sm sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">Security & reliability</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+        <div className="rounded-[2rem] border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-6 shadow-sm dark:border-slate-800 dark:from-slate-900/80 dark:to-slate-950 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">Security & reliability</p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 dark:text-slate-50 sm:text-4xl">
             A strong foundation for customer trust.
           </h2>
-          <p className="mt-4 text-base leading-8 text-slate-600">
+          <p className="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">
             Northstar is designed for founders who want a professional SaaS experience without starting from a blank page.
           </p>
 
-          <div className="mt-6 rounded-[1.25rem] border border-slate-200 bg-white p-4">
+          <div className="mt-6 rounded-[1.25rem] border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900/70">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div>
-                <p className="font-semibold text-slate-950">Production-ready architecture</p>
-                <p className="text-sm text-slate-600">The starter is structured so you can ship faster with fewer foundation risks.</p>
+                <p className="font-semibold text-slate-950 dark:text-slate-100">Production-ready architecture</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300">The starter is structured so you can ship faster with fewer foundation risks.</p>
               </div>
             </div>
           </div>
@@ -74,13 +74,13 @@ export default function Security() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.35, delay: index * 0.05 }}
-                className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+                className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900/80"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-white">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-slate-950">{policy.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-slate-600">{policy.description}</p>
+                <h3 className="mt-4 text-lg font-semibold text-slate-950 dark:text-slate-100">{policy.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{policy.description}</p>
               </motion.div>
             );
           })}

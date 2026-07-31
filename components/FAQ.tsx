@@ -24,8 +24,8 @@ export default function FAQ() {
     <section id="faq" className="bg-slate-50/90 py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">FAQ</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">FAQ</p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 dark:text-slate-50 sm:text-4xl">
             Questions founders often ask before they buy.
           </h2>
         </div>
@@ -34,12 +34,12 @@ export default function FAQ() {
           {questions.map((item) => (
             <details
               key={item.question}
-              className="group rounded-[1.25rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:border-sky-200"
+              className="group rounded-[1.25rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:border-sky-200 dark:border-slate-800 dark:bg-slate-900/80 dark:hover:border-sky-400"
             >
-              <summary className="cursor-pointer list-none text-lg font-semibold text-slate-950 marker:hidden">
+              <summary className="cursor-pointer list-none text-lg font-semibold text-slate-950 marker:hidden dark:text-slate-100">
                 {item.question}
               </summary>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{item.answer}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{item.answer}</p>
             </details>
           ))}
         </div>
